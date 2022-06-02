@@ -17,7 +17,7 @@ void reverse(char *str){
 int main(int argc, char **argv){
     while(*++argv){
 	reverse(*argv);
-	printf("%s ",*argv);
+	printf("%s ", *argv);
     }
     printf("\n");
 
