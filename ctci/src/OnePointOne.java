@@ -18,13 +18,12 @@ public class OnePointOne {
 		Hashtable<Character, Integer> table = new Hashtable<>();
 		
 		for(int i = 0; i < len; i++) {
-			if(!table.containsKey(input.charAt(i))) {
-				table.put(input.charAt(i), 1);
-			}
-			else
+			if(table.containsKey(input.charAt(i))) {
 				return false;
+			}
+			
+			table.put(input.charAt(i), 1);
 		}
-		
 		return true;
 	}
 	
@@ -36,7 +35,7 @@ public class OnePointOne {
 	 */
 	public static boolean uniqueCharsNoDs(String input) { 
 		int len = input.length();
-		if(len > 256) return false; 
+		if(len > 256) return false; // since only 256 ascii chars, if len > 256 string cannot be unique
 		int[] count = new int[256]; //to optimize: make count a bool array instead of an int array 
 		
 		for(int i = 0; i < len; i++) {
